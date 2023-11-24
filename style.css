@@ -1,0 +1,77 @@
+.list-element {
+    list-style-type: none; /* Removes the default list item bullets */
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.list-element:hover {
+    background-color: #faf7f7; /* Change the background color on hover */
+}
+body {
+    background-image: url('Assign2photo.webp');
+    background-size: cover; /* This property ensures that the background image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-position: center; /* Centers the background image */
+    /* You can add additional background properties or styles here */
+}
+
+.body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('Assign2photo.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#products-table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+    background-color: #5d9cee;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    /* Add a subtle box shadow */
+    border-radius: 10px;
+}
+
+#products-table th, #products-table td {
+    padding: 15px;
+    border: 1px solid #fbf9f9;
+    text-align: center;
+    border-radius: 0%;
+}
+
+#products-table th {
+    background-color: #0c6589df;
+    color: #ffffff;
+    border-radius: 50px;
+}
+
+#products-table tbody tr:nth-child(even) {
+    background-color: #1a6787;
+    border-radius: 20%;
+}
+
+#products-table tbody tr:hover {
+    background-color: #fcfafa;
+    border-radius: 20%;
+}
+
+/* Add this to your existing CSS code */
+#products-table tbody img {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+    border-radius: 20px;
+}
+
+#products-table tbody img:hover {
+    transform: scale(2); /* Increase the size on hover */
+}
