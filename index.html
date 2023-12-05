@@ -1,12 +1,29 @@
+<!-- product-info.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Display</title>
+    <title>Product Info</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+
+    <div>
+        <button onclick="goBack()">Go Back</button>
+        </div>
+        <select id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="fragrances">Parfumes</option>
+            <option value="smartphones">Phones</option>
+            <option value="skincare">Health&Care</option>
+            <option value="laptops">Laptops</option>
+            <option value="home-decoration">Decoration</option>
+            <option value="groceries">Food</option>
+        </select>
+        
     <table id="products-table">
         <thead>
             <tr>
@@ -25,11 +42,25 @@
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeModal">&times;</span>
-            <div id="productInfo"></div>
+            <div id="productInfo">
+<div id="productGalleryContainer"></div>
+<h2 id="productTitle"></h2>
+<p id="productPrice"></p>
+<p id="productDiscount"></p>
+<p id="productCategory"></p>
+<p id="productStock"></p>
+
+<div>
+    <button id="goBackButton">Go Back</button>
+</div>
+
+            </div>
             <div id="productGallery"></div>
         </div>
     </div>
 
     <script src="./main.js"></script>
+    <script src="./product-info.js"></script>
+
 </body>
 </html>

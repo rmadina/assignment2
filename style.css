@@ -35,7 +35,6 @@ body {
     border-collapse: collapse;
     background-color: #5d9cee;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-    /* Add a subtle box shadow */
     border-radius: 10px;
 }
 
