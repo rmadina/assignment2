@@ -1,12 +1,12 @@
 const apiUrl = 'https://dummyjson.com/products';
 const tableBody = document.getElementById("products-table-body");
-let products; 
+let products;
 
 const getData = async () => {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        products = data.products; 
+        products = data.products;
         return products;
     } catch (error) {
         console.error('Error fetching data:', error);
@@ -16,19 +16,19 @@ const getData = async () => {
 
 const createTableRow = (product, index) => {
     const tr = document.createElement("tr");
-    tr.id = `product-row-${index}`; 
-    const { thumbnail, title, price, discount, category, stock } = product;
+    tr.id = `product-row-${index}`;
+    const { thumbnail, title, price, discountPercentage, category, stock } = product;
 
     const thumbnailCell = document.createElement("td");
     const thumbnailImg = document.createElement("img");
-    thumbnailImg.src = thumbnail; 
-    thumbnailImg.alt = title; 
+    thumbnailImg.src = thumbnail;
+    thumbnailImg.alt = title;
     thumbnailImg.width = 1000;
     thumbnailImg.height = 1000;
     thumbnailCell.appendChild(thumbnailImg);
     tr.appendChild(thumbnailCell);
 
-    const cells = [title, price, discount, category, stock];
+    const cells = [title, price, discountPercentage, category, stock];
     cells.forEach((cellData) => {
         const td = document.createElement("td");
         td.textContent = cellData;
@@ -53,8 +53,8 @@ const displayData = async () => {
     }
     const displayData = async () => {
         try {
-            await getData(); 
-    
+            await getData();
+
             const categoryFilter = document.getElementById('categoryFilter');
             const categories = Array.from(new Set(products.map(product => product.category)));
             categories.forEach(category => {
@@ -63,7 +63,7 @@ const displayData = async () => {
                 option.textContent = category;
                 categoryFilter.appendChild(option);
             });
-    
+
             tableBody.innerHTML = "";
             products.forEach((product, index) => {
                 createTableRow(product);
@@ -78,36 +78,36 @@ const displayData = async () => {
             console.error('Error displaying data:', error);
         }
     };
-const productRows = document.querySelectorAll("#products-table-body tr");
-productRows.forEach((row, index) => {
-    row.addEventListener("click", () => {
-        const selectedProduct = products[index];
-        localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
-        window.location.href = 'product-details.html'; 
+    const productRows = document.querySelectorAll("#products-table-body tr");
+    productRows.forEach((row, index) => {
+        row.addEventListener("click", () => {
+            const selectedProduct = products[index];
+            localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+            window.location.href = 'product-details.html';
+        });
     });
-});
 
 
 
-const categoryFilter = document.getElementById('categoryFilter');
-categoryFilter.addEventListener('change', () => {
-    const selectedCategory = categoryFilter.value;
-    filterProducts(selectedCategory);
-});
+    const categoryFilter = document.getElementById('categoryFilter');
+    categoryFilter.addEventListener('change', () => {
+        const selectedCategory = categoryFilter.value;
+        filterProducts(selectedCategory);
+    });
 
-const filterProducts = (category) => {
-    tableBody.innerHTML = "";
-    if (category === "") {
-        products.forEach((product) => {
-            createTableRow(product);
-        });
-    } else {
-        const filteredProducts = products.filter(product => product.category === category);
-        filteredProducts.forEach((product) => {
-            createTableRow(product);
-        });
-    }
-};
+    const filterProducts = (category) => {
+        tableBody.innerHTML = "";
+        if (category === "") {
+            products.forEach((product) => {
+                createTableRow(product);
+            });
+        } else {
+            const filteredProducts = products.filter(product => product.category === category);
+            filteredProducts.forEach((product) => {
+                createTableRow(product);
+            });
+        }
+    };
 
 }
 const productRows = document.querySelectorAll("#products-table-body tr");
@@ -115,7 +115,7 @@ productRows.forEach((row, index) => {
     row.addEventListener("click", () => {
         const selectedProduct = products[index];
         localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
-        window.location.href = 'product-details.html'; 
+        window.location.href = 'product-details.html';
     });
 });
 
@@ -125,7 +125,7 @@ window.onload = () => {
     const thumbnailImgs = document.querySelectorAll("#products-table tbody img");
     thumbnailImgs.forEach((img, index) => {
         img.addEventListener("click", () => {
-            const selectedProduct = products[index]; 
+            const selectedProduct = products[index];
             showModal(selectedProduct);
         });
     });

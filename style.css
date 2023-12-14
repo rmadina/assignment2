@@ -1,5 +1,5 @@
 .list-element {
-    list-style-type: none; 
+    list-style-type: none;
     margin: 5px;
     border: 1px solid #ccc;
     background-color: #f9f9f9;
@@ -11,13 +11,14 @@
 }
 
 .list-element:hover {
-    background-color: #faf7f7; 
+    background-color: #faf7f7;
 }
+
 body {
     background-image: url('Assign2photo.webp');
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .body {
@@ -29,21 +30,29 @@ body {
     background-position: center;
 }
 
+
+#categoryFilter {
+    width: 200px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+
 #products-table {
     width: 80%;
     margin: 50px auto;
     border-collapse: collapse;
     background-color: #5d9cee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
 }
 
-#products-table th, #products-table td {
+#products-table th,
+#products-table td {
     padding: 15px;
-    border: 1px solid #fbf9f9;
     text-align: center;
-    border-radius: 0%;
+    border-radius: 15px;
 }
 
 #products-table th {
@@ -65,12 +74,12 @@ body {
 #products-table tbody img {
     width: 70px;
     height: 70px;
-    transition: transform 0.3s ease; 
+    transition: transform 0.3s ease;
     border-radius: 20px;
 }
 
 #products-table tbody img:hover {
-    transform: scale(2); 
+    transform: scale(2);
 }
 
 
