@@ -12,12 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('productDiscount').textContent = `Discount: ${selectedProduct.discountPercentage}%`;
         document.getElementById('productCategory').textContent = `Category: ${selectedProduct.category}`;
         document.getElementById('productStock').textContent = `Stock: ${selectedProduct.stock}`;
-
+        document.getElementById('')
         const productGalleryContainer = document.getElementById('productGalleryContainer');
         const thumbnailImg = document.createElement('img');
         thumbnailImg.src = selectedProduct.thumbnail;
+
         thumbnailImg.alt = selectedProduct.title;
-        productGalleryContainer.appendChild(thumbnailImg);
+       productGalleryContainer.appendChild(thumbnailImg);
     };
 
     getProductInfo();

@@ -15,7 +15,7 @@
 }
 
 body {
-    background-image: url('Assign2photo.webp');
+    background-image: linear-gradient(#a4d8f4, rgb(43, 86, 133));
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
